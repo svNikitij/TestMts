@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  activemq:
+    #    restart: always
+    image: vromero/activemq-artemis
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    environment:
+      ARTEMIS_USERNAME: myuser
+      ARTEMIS_PASSWORD: otherpassword
+#  test_mts:
+#    #    restart: always
+#    image: test_mts:1.0-SNAPSHOT
+#    depends_on:
+#      - activemq
+#    ports:
+#      - "8090:8090"
+#    volumes:
+#      - "./log:/log"
