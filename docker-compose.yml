@@ -9,12 +9,10 @@ services:
     environment:
       ARTEMIS_USERNAME: myuser
       ARTEMIS_PASSWORD: otherpassword
-#  test_mts:
-#    #    restart: always
-#    image: test_mts:1.0-SNAPSHOT
-#    depends_on:
-#      - activemq
-#    ports:
-#      - "8090:8090"
-#    volumes:
-#      - "./log:/log"
+  test_mts:
+    #    restart: always
+    image: nikitij351/test-mts:latest
+    depends_on:
+      - activemq
+    ports:
+      - "8090:8080"
