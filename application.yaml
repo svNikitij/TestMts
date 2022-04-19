@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8080
   error:
     include-message: always
     include-binding-errors: always
@@ -10,8 +10,6 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   activemq:
     broker-url: "tcp://localhost:61616"
-    user: "myuser"
-    password: "otherpassword"
 
 springdoc:
   packages-to-scan: "ru.mts"

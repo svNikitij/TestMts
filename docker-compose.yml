@@ -7,12 +7,17 @@ services:
       - "61616:61616"
       - "8161:8161"
     environment:
-      ARTEMIS_USERNAME: myuser
-      ARTEMIS_PASSWORD: otherpassword
+      ARTEMIS_USERNAME: root
+      ARTEMIS_PASSWORD: test
   test_mts:
     #    restart: always
     image: nikitij351/test-mts:latest
     depends_on:
       - activemq
     ports:
-      - "8090:8080"
+      - "8091:8080"
+    volumes:
+      - ${PWD}/log:/log
+    environment:
+      - SPRING_ACTIVEMQ_USER=root
+      - SPRING_ACTIVEMQ_PASSWORD=test
