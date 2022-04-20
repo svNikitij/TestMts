@@ -16,8 +16,12 @@ services:
       - activemq
     ports:
       - "8091:8080"
+    working_dir: /opt/test_mts
     volumes:
-      - ${PWD}/log:/log
+      - ./logs:/opt/test_mts/log
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
     environment:
       - SPRING_ACTIVEMQ_USER=root
       - SPRING_ACTIVEMQ_PASSWORD=test
+      - LOGGING_FILE_PATH=log
